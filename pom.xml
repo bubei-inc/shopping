@@ -57,6 +57,7 @@
         <module>shopping-common</module>
         <module>shopping-channel</module>
         <module>shopping-config</module>
+        <module>shopping-mall</module>
     </modules>
 
 </project>
