@@ -1,0 +1,17 @@
+server:
+  port: 8765
+spring:
+  application:
+    name: shopping-config
+  cloud:
+    config:
+      server:
+        git:
+          uri:https://github.com/pigletLet/shopping.git
+          searchPaths: /shopping
+          username: piglet
+          password: 129329Sun
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhsot:8765/eureka/
