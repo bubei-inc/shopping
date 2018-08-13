@@ -8,7 +8,7 @@ spring:
       server:
         git:
           uri:https://github.com/pigletLet/shopping.git
-          searchPaths: /shopping
+          searchPaths: shopping
           username: piglet
           password: 129329Sun
 eureka:
