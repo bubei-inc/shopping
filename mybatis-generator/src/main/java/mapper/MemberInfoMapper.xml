@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.MemberInfoMapper">
+  <resultMap id="BaseResultMap" type="model.MemberInfo">
+    <result column="USER_KIND_ID" jdbcType="VARCHAR" property="userKindId" />
+    <result column="USER_KIND_NAME" jdbcType="VARCHAR" property="userKindName" />
+    <result column="USER_KIND_FLAG" jdbcType="INTEGER" property="userKindFlag" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <insert id="insert" parameterType="model.MemberInfo">
+    insert into USER_KIND_TAB (USER_KIND_ID, USER_KIND_NAME, USER_KIND_FLAG, 
+      CREATE_TIME)
+    values (#{userKindId,jdbcType=VARCHAR}, #{userKindName,jdbcType=VARCHAR}, #{userKindFlag,jdbcType=INTEGER}, 
+      #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="model.MemberInfo">
+    insert into USER_KIND_TAB
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userKindId != null">
+        USER_KIND_ID,
+      </if>
+      <if test="userKindName != null">
+        USER_KIND_NAME,
+      </if>
+      <if test="userKindFlag != null">
+        USER_KIND_FLAG,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userKindId != null">
+        #{userKindId,jdbcType=VARCHAR},
+      </if>
+      <if test="userKindName != null">
+        #{userKindName,jdbcType=VARCHAR},
+      </if>
+      <if test="userKindFlag != null">
+        #{userKindFlag,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+</mapper>
