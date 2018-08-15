@@ -58,6 +58,7 @@
         <module>shopping-channel</module>
         <module>shopping-config</module>
         <module>shopping-mall</module>
+        <module>mybatis-generator</module>
     </modules>
 
 </project>
